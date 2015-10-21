@@ -31,15 +31,20 @@
   <dependencies>
     
     <dependency>
-    	<groupId>junit</groupId>
-      	<artifactId>junit</artifactId>
-      	<version>3.8.1</version>
-      	<scope>test</scope>
-    </dependency>
-    
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+	</dependency>
+   
     <dependency>
 		<groupId>com.sun.jersey</groupId>
 		<artifactId>jersey-server</artifactId>
+		<version>1.19</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.sun.jersey</groupId>
+		<artifactId>jersey-client</artifactId>
 		<version>1.19</version>
 	</dependency>
 	
