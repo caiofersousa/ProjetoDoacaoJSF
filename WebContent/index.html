@@ -10,12 +10,12 @@
 		function sendData() {
 			var data = new FormData();
 			$('form input').each(function(i, element) {
-				var attr = $('form input'); 
-				data.append($(attr)[0].attr('name'), $(attr)[0].value());
+				var attr = $('form input')[i]; 
+				data.append(attr.name, attr.value);
 			})
 	
 		    $.ajax({
-		        url: '/helloworld',
+		        url: '/rest/model/all',
 		        type: 'POST',
 		        contentType: false,
 		        data: data,
@@ -23,11 +23,10 @@
 		    });
 		};
 	</script>
-	<form action="model/all">
-      id: <input type="text" name="id"/><br/>
-      name: <input type="text" name="name"/><br/>
+	
+    id: <input type="text" name="id"/><br/>
+    name: <input type="text" name="name"/><br/>
       
-      <button onclick="sendData()">Gravar</button>
-    </form>
+    <button onclick="sendData()">Gravar</button>
 </body>
 </html>
