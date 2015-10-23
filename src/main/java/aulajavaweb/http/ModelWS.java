@@ -20,6 +20,4 @@ public class ModelWS {
 		return Arrays.asList(Produto.builder().id(1).name("coca-cola").build());
 	}
 	
-	
-	
 }

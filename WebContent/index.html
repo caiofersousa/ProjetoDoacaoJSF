@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+  	<script src="resources/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<script>
+		function sendData() {
+			var data = new FormData();
+			$('form input').each(function(i, element) {
+				var attr = $('form input'); 
+				data.append($(attr)[0].attr('name'), $(attr)[0].value());
+			})
+	
+		    $.ajax({
+		        url: '/helloworld',
+		        type: 'POST',
+		        contentType: false,
+		        data: data,
+		        dataType: 'json'
+		    });
+		};
+	</script>
+	<form action="model/all">
+      id: <input type="text" name="id"/><br/>
+      name: <input type="text" name="name"/><br/>
+      
+      <button onclick="sendData()">Gravar</button>
+    </form>
+</body>
+</html>
