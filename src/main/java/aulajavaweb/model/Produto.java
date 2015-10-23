@@ -1,5 +1,8 @@
 package aulajavaweb.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Produto implements Model {
 	
 	private Integer id;
@@ -21,7 +24,7 @@ public class Produto implements Model {
 		return name;
 	}
 	
-	public Builder builder() {
+	public static Builder builder() {
 		return new Builder();
 	}
 	

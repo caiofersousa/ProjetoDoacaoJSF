@@ -8,14 +8,18 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import aulajavaweb.model.Produto;
+
 @Path("model")
 public class ModelWS {
 
 	@GET
 	@Path("all")
 	@Produces({MediaType.APPLICATION_JSON})
-	public List<String> model() {
-		return Arrays.asList("dasdsa", "dasds");
+	public List<Produto> model() {
+		return Arrays.asList(Produto.builder().id(1).name("coca-cola").build());
 	}
+	
+	
 	
 }

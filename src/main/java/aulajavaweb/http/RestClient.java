@@ -7,7 +7,7 @@ import java.net.URL;
 public class RestClient {
 
 	public static void main(String...args) throws IOException {
-		String url0 = "http://localhost:8888/aulajavaweb/model";
+		String url0 = "http://localhost:8080/aulajavaweb/model/all";
 
 		URL url = new URL(url0); 
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();

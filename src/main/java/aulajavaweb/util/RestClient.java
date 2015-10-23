@@ -1,10 +1,8 @@
 package aulajavaweb.util;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation.Builder;
-import javax.ws.rs.client.WebTarget;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
 
 public final class RestClient {
 	
@@ -51,26 +49,25 @@ public final class RestClient {
 		
 	}
 	
-	public Builder create(String path) {
-		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target("http://mocky.io");		
-		return target.path(path).request();
+	public ClientResponse create(String url, String method) {
+		Client client = Client.create();
+		WebResource webResource = client.resource(url);
+		if(method == null) {
+			return webResource.get(ClientResponse.class);
+		} else {
+			return webResource.get(ClientResponse.class);
+		}
 	}
 	
-	public <T> T get(Builder request, Class<T> clazz) {
-		return request.get(clazz);
+	private void validate(ClientResponse response) {
+		if (response.getStatus() != 200) {
+			throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
+		}
 	}
 	
-	public <T> T put(Builder request, Class<T> clazz, Entity<T> entity) {
-		return request.put(entity, clazz);
+	public <T> T get(ClientResponse response, Class<T> clazz) {
+		validate(response);
+		return response.getEntity(clazz);
 	}
-	
-	public <T> T post(Builder request, Class<T> clazz, Entity<T> entity) {
-		return request.post(entity, clazz);
-	}
-	
-	public <T> T delete(Builder request, Class<T> clazz, Entity<T> entity) {
-		return request.delete(clazz);
-	}
-	
+
 }
