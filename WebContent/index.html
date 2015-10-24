@@ -9,13 +9,13 @@
 	<script>
 		function sendData() {
 			var data = new FormData();
-			$('form input').each(function(i, element) {
-				var attr = $('form input')[i]; 
+			$('input').each(function(i, element) {
+				var attr = $('input')[i]; 
 				data.append(attr.name, attr.value);
 			})
 	
 		    $.ajax({
-		        url: '/rest/model/all',
+		        url: '/rest/model/insert',
 		        type: 'POST',
 		        contentType: false,
 		        data: data,

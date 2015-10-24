@@ -49,7 +49,7 @@ public final class RestClient {
 		
 	}
 	
-	public ClientResponse create(String url, String method) {
+	public static ClientResponse create(String url, String method) {
 		Client client = Client.create();
 		WebResource webResource = client.resource(url);
 		if(method == null) {
