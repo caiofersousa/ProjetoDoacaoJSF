@@ -2,14 +2,52 @@ package aulajavaweb.model;
 
 import java.util.Date;
 
-public class Vermifugo {
+import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 
-	public enum TipoVermifugo {
+import aulajavaweb.model.enums.FabricanteVermifugo;
+import aulajavaweb.model.enums.TipoVermifugo;
+
+@Entity
+@XmlRootElement
+public class Vermifugo implements Model {
+
+	private Integer id;
+	private Date dataVencimento;
+	private TipoVermifugo tipo;
+	private FabricanteVermifugo fabricante;
+
+	@Override
+	public Integer getId() {
+		return id;
 	}
 	
-	public enum Fabricante {		
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	public Date getDataVencimento() {
+		return dataVencimento;
 	}
 
-	Date dataVencimento;
+	public void setDataVencimento(Date dataVencimento) {
+		this.dataVencimento = dataVencimento;
+	}
+	
+	public TipoVermifugo getTipo() {
+		return tipo;
+	}
+	
+	public void setTipo(TipoVermifugo tipo) {
+		this.tipo = tipo;
+	}
+	
+	public FabricanteVermifugo getFabricante() {
+		return fabricante;
+	}
+	
+	public void setFabricante(FabricanteVermifugo fabricante) {
+		this.fabricante = fabricante;
+	}
 	
 }
