@@ -1,5 +1,10 @@
 package aulajavaweb.model.enums;
 
-public class Temperamento {
+public enum Temperamento {
+	DOCIL,
+	DE_GUARDA, 
+	ANTI_SOCIAL
+
 
 }
+//TODO Colocar as constantes do Enum com letras maiúsculas
