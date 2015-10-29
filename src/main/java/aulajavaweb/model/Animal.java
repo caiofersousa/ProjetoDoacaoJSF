@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import aulajavaweb.model.enums.Especie;
-import aulajavaweb.model.enums.Raca;
+import aulajavaweb.model.enums.RacaGato;
 import aulajavaweb.model.enums.Sexo;
 import aulajavaweb.model.enums.Temperamento;
 
@@ -16,7 +16,7 @@ public class Animal implements Model {
 	@Id
 	private Integer id;
 	private Especie especie;
-	private Raca raca;
+	private RacaGato raca;
 	private Sexo sexo;
 	private Integer meses;
 	private Temperamento temperamento;
@@ -38,11 +38,11 @@ public class Animal implements Model {
 		this.especie = especie;
 	}
 
-	public Raca getRaca() {
+	public RacaGato getRaca() {
 		return raca;
 	}
 
-	public void setRaca(Raca raca) {
+	public void setRaca(RacaGato raca) {
 		this.raca = raca;
 	}
 

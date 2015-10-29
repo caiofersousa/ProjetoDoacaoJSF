@@ -1,6 +1,10 @@
 package aulajavaweb.model.enums;
-
-public enum Raca {
+/**
+ * 
+ * @author Caio Fernando de Sousa
+ *
+ */
+public enum RacaGato {
 	SRD, PASTOR_ALEMAO, POODLE, PINSCHER, ROTTWEILER, LHASA_APSO, TECKEL, YORKSHIRE
 
 }
