@@ -6,14 +6,14 @@ import aulajavaweb.model.Model;
 
 public interface Dao<T extends Model>  {
 
-	void insert(T t);
+	void inserir(T t);
 	
-	void delete(Integer t) ;
+	void excluir(Integer t) ;
 	
-	T find(Integer id);
+	T buscar(Integer id);
 	
-	List<T> findAll();
+	List<T> buscarTodos();
 	
-	void update(T t);
+	void atualizar(T t);
 	
 }

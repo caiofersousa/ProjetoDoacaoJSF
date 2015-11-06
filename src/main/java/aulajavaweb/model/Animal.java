@@ -1,5 +1,7 @@
 package aulajavaweb.model;
 
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,15 +10,19 @@ import aulajavaweb.model.enums.Especie;
 import aulajavaweb.model.enums.RacaGato;
 import aulajavaweb.model.enums.Sexo;
 import aulajavaweb.model.enums.Temperamento;
-
+/**
+ * 
+ * @author Caio Fernando de Sousa
+ *
+ */
 @Entity
-@XmlRootElement
 public class Animal implements Model {
 	
 	@Id
 	private Integer id;
 	private Especie especie;
 	private RacaGato raca;
+	private String nome;
 	private Sexo sexo;
 	private Integer meses;
 	private Temperamento temperamento;
@@ -24,6 +30,11 @@ public class Animal implements Model {
 	// em gramas
 	private Integer peso;
 	private HistoricoMedico historicoMedico;	
+	
+	@PostConstruct
+	public void setaNome(){
+		this.nome = "Caio Fernando de Sousa";
+	}
 	
 	@Override
 	public Integer getId() {
@@ -96,6 +107,14 @@ public class Animal implements Model {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 }
