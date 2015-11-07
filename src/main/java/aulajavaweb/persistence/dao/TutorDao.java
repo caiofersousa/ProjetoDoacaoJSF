@@ -12,7 +12,7 @@ public class TutorDao implements Dao<Tutor> {
 	}
 	
 	
-	private static TutorDao singleton(){
+	public static TutorDao singleton(){
 		return dao == null ? new TutorDao() : dao;
 	}
 

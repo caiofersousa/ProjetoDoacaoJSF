@@ -10,8 +10,82 @@
 </h:head>
 <h:body>
 	<h:form>
-		<h:outputText value="Nome"></h:outputText>
-		<h:inputText value="#{animal.nome}"></h:inputText>
+	
+	
+	
+		<table>
+			<tr>
+				<td>
+					<h:outputText value="id"></h:outputText>
+				</td>
+				<td>
+					<p:inputText></p:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputText value="nome"></h:outputText>
+				</td>
+				<td>
+					<p:inputText></p:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputText value="animais"></h:outputText>				
+				</td>
+				<td>
+					<p:inputText></p:inputText>
+				</td>
+			</tr>
+		    <tr>
+		    	<td>
+		    		<h:outputText value="telefone"></h:outputText>
+		    	</td>
+		    	<td>
+		    		<p:inputText></p:inputText>
+		    	</td>
+		    </tr>
+			<tr>
+				<td>
+					<h:outputText value="email"></h:outputText>
+				</td>
+				<td>
+					<p:inputText></p:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputText value="email"></h:outputText>
+				</td>
+				<td>
+					<p:inputText></p:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputText value="Endereço"></h:outputText>
+				</td>
+				<td>
+					<p:inputText></p:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputText value="Tipo"></h:outputText>
+				</td>
+				<td>
+		           <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" style="width:125px">
+            		 <f:selectItem itemLabel="Desencarados" itemValue="" />
+            		 <f:selectItem itemLabel="Bla" itemValue="Xbox One" />
+        		   </p:selectOneMenu>
+				</td>
+			</tr>
+		</table>
+	
+		<p:outputText value="Nome"></p:outputText>
+		<p:inputText value="#{animal.nome}"></p:inputText>
+		
 	</h:form>
 </h:body>
 </html>
