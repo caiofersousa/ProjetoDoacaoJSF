@@ -5,13 +5,11 @@ import java.util.List;
 import aulajavaweb.model.Animal;
 import aulajavaweb.model.AnimalVermifugo;
 
-public class AnimalVermifugoDao extends DaoImpl<Animal> {
+public class AnimalVermifugoDao implements Dao<Animal> {
 
 
 
 	public AnimalVermifugoDao(Class<Animal> clazz) {
-		super(clazz);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -43,5 +41,5 @@ public class AnimalVermifugoDao extends DaoImpl<Animal> {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
 }

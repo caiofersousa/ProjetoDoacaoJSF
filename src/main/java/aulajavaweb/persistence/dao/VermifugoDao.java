@@ -1,11 +1,45 @@
 package aulajavaweb.persistence.dao;
 
+import java.util.List;
+
 import aulajavaweb.model.Vermifugo;
 
-public class VermifugoDao extends DaoImpl<Vermifugo> {
+public class VermifugoDao implements Dao<Vermifugo> {
+	
+	
+	private VermifugoDao dao;
+	
+	private VermifugoDao() {
+	}
 
-	public VermifugoDao() {
-		super(Vermifugo.class);
+	@Override
+	public void inserir(Vermifugo t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluir(Integer t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Vermifugo buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Vermifugo> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void atualizar(Vermifugo t) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
