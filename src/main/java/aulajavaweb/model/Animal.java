@@ -27,6 +27,7 @@ public class Animal implements Model {
 	private Integer meses;
 	private Temperamento temperamento;
 	private String pelagem;
+	private Tutor tutor;
 	// em gramas
 	private Integer peso;
 	private HistoricoMedico historicoMedico;	
@@ -115,6 +116,14 @@ public class Animal implements Model {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Tutor getTutor() {
+		return tutor;
+	}
+
+	public void setTutor(Tutor tutor) {
+		this.tutor = tutor;
 	}
 	
 }

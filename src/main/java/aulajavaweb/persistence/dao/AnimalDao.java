@@ -39,7 +39,7 @@ public class AnimalDao implements Dao<Animal> {
 	}
 
 	@Override
-	public void excluir(Integer t) {
+	public void excluir(Animal t) {
 		animais.remove(t);
 	}
 

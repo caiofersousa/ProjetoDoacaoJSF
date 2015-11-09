@@ -22,7 +22,7 @@ public class HistoricoMedicoDao implements Dao<HistoricoMedico> {
 	}
 
 	@Override
-	public void excluir(Integer t) {
+	public void excluir(HistoricoMedico t) {
 		// TODO Auto-generated method stub
 		
 	}

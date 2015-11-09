@@ -1,90 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" 
-	 xmlns:f="http://java.sun.com/jsf/core" 
-	 xmlns:h="http://java.sun.com/jsf/html"
-	 xmlns:ui="http://java.sun.com/jsf/facelets"
-	 xmlns:p="http://primefaces.org/ui">
+	  xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Tutor</title>
 </h:head>
 <h:body>
 	<h:form>
-	
-	
-	
 		<table>
 			<tr>
 				<td>
-					<h:outputText value="id"></h:outputText>
+					<h:outputText for="nome" value="Nome: "/>
 				</td>
 				<td>
-					<p:inputText></p:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<h:outputText value="nome"></h:outputText>
-				</td>
-				<td>
-					<p:inputText></p:inputText>
+					<p:inputText />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<h:outputText value="animais"></h:outputText>				
+					<h:outputText for="telefone" value="Telefone: "></h:outputText>
 				</td>
 				<td>
-					<p:inputText></p:inputText>
+					<p:inputText id="telefone" value="#{tutorBean.tutor.telefone}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputText for="email" value="Email: "></h:outputText>				
+				</td>
+				<td>
+					<p:inputText id="email" value="#{tutorBean.tutor.email}"/>
 				</td>
 			</tr>
 		    <tr>
 		    	<td>
-		    		<h:outputText value="telefone"></h:outputText>
+		    		<h:outputText for="endereco" value="Endereço: "></h:outputText>
 		    	</td>
 		    	<td>
-		    		<p:inputText></p:inputText>
+		    		<p:selectOneMenu id="endereco" value="#{tutorBean.tutor.endereco}" >
+		    			<f:selectItems value="#{tutorBean.enderecos}"
+		    						   var="e" 
+		    						   itemLabel="#{e.description}"
+		    						   itemValue="#{e.code}" />
+		    		</p:selectOneMenu>
 		    	</td>
 		    </tr>
 			<tr>
 				<td>
-					<h:outputText value="email"></h:outputText>
+					<h:outputText for="tipo" value="Tipo:"/>
 				</td>
 				<td>
-					<p:inputText></p:inputText>
+					<h:selectOneMenu id="tipo" value="#{tutorBean.tutor.tipo}">
+   						<f:selectItems value="#{tutorBean.tipos}" 
+   						   var="e"
+   						   itemLabel="#{e.description}"
+   						   itemValue="#{e.code}"/>
+   					</h:selectOneMenu>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<h:outputText value="email"></h:outputText>
-				</td>
-				<td>
-					<p:inputText></p:inputText>
+				<td colspan="2">
+		<h:dataTable value="#{animalBean.animais}" var="animal"
+    							 styleClass="order-table"
+    							 headerClass="order-table-header"
+    				             rowClasses="order-table-odd-row, order-table-even-row">
+   			
+   				    <h:column>
+   				        <f:facet name="header">Nome</f:facet>#{animal.nome}
+   			        </h:column>
+   			
+   			        <h:column>
+   				   	    <f:facet name="header">Peso</f:facet>#{animal.peso}
+   			        </h:column>
+   			
+		   			<h:column>
+		   				<f:facet name="header">Pelagem</f:facet>#{animal.pelagem}
+		   			</h:column>
+   		
+   		</h:dataTable>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<h:outputText value="Endereço"></h:outputText>
-				</td>
-				<td>
-					<p:inputText></p:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<h:outputText value="Tipo"></h:outputText>
-				</td>
-				<td>
-		           <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" style="width:125px">
-            		 <f:selectItem itemLabel="Desencarados" itemValue="" />
-            		 <f:selectItem itemLabel="Bla" itemValue="Xbox One" />
-        		   </p:selectOneMenu>
-				</td>
+			  <td colspan="2">
+						<h:commandButton value="Cadastrar" action="#{tutorBean.cadastrar}"/>
+			  </td>
 			</tr>
 		</table>
 	
-		<p:outputText value="Nome"></p:outputText>
-		<p:inputText value="#{animal.nome}"></p:inputText>
 		
 	</h:form>
 </h:body>

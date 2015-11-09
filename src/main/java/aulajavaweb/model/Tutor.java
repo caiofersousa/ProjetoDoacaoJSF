@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import aulajavaweb.model.enums.TipoTutor;
 
 @Entity
-@XmlRootElement
 public class Tutor implements Model {
 	
 	@Id

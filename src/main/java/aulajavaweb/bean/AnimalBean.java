@@ -17,64 +17,39 @@ import aulajavaweb.persistence.dao.AnimalDao;
 public class AnimalBean implements Bean<Animal>{
 	
 	private Animal animal = new Animal();
-	private AnimalDao dao = AnimalDao.singleton();
+	private AnimalDao dao = AnimalDao.singleton(); 
 	
-	public AnimalBean(){
-		
+	public AnimalBean() {
 	}
 	
-	
-
-	
-	public Animal getAnimal(){
+	public Animal getAnimal() {
 		return animal;
 	}
-	
-	public void setAnimal(Animal animal){
-		this.animal = animal;
-	}
-
 
 	@Override
 	public void inserir(Animal t) {
 		dao.inserir(t);
 	}
 
-
-
-
 	@Override
 	public void excluir(Animal t) {
-		dao.excluir(t.getId());
+		dao.excluir(t);
 	}
-
-
-
-
+	
 	@Override
 	public Animal buscar(Integer id) {
-		dao.buscar(id);
-		return null;
+		return dao.buscar(id);
 	}
-
-
-
 
 	@Override
 	public List<Animal> buscarTodos() {
-		dao.buscarTodos();
-		return null;
+		return dao.buscarTodos();
 	}
-
-
-
 
 	@Override
 	public void atualizar(Animal t) {
 		dao.atualizar(t);
-			
 	}
-
 
 
 

@@ -1,54 +1,27 @@
 package aulajavaweb.persistence.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import aulajavaweb.model.Tutor;
 
-public class TutorDao implements Dao<Tutor> {
+public class TutorDao  {
 	
-	private static TutorDao dao = TutorDao.singleton();
+	private static TutorDao dao;
+	private List<Tutor> tutores = new ArrayList<Tutor>();
 	
 	private TutorDao() {
 	}
 	
-	
-	public static TutorDao singleton(){
+	public static TutorDao singleton() {
 		return dao == null ? new TutorDao() : dao;
 	}
-
-
-	@Override
-	public void inserir(Tutor t) {
-		// TODO Auto-generated method stub
-		
+	
+	public void cadastrar(Tutor tutor) {
 	}
-
-
-	@Override
-	public void excluir(Integer t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public Tutor buscar(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public List<Tutor> buscarTodos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public void atualizar(Tutor t) {
-		// TODO Auto-generated method stub
-		
+	
+	public List<Tutor> getTutores() {
+		return tutores;
 	}
 
 }

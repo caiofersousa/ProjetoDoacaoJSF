@@ -21,7 +21,7 @@ public class VacinaDao implements Dao<Vacina> {
 	}
 
 	@Override
-	public void excluir(Integer t) {
+	public void excluir(Vacina t) {
 		vacinas.remove(t);
 	}
 

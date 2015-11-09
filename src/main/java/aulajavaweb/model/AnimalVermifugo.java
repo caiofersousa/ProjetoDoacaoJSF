@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@XmlRootElement
 public class AnimalVermifugo implements Model {
 
 	@Id

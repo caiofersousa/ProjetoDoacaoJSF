@@ -19,7 +19,7 @@ public class VermifugoDao implements Dao<Vermifugo> {
 	}
 
 	@Override
-	public void excluir(Integer t) {
+	public void excluir(Vermifugo t) {
 		// TODO Auto-generated method stub
 		
 	}
