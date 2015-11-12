@@ -14,7 +14,7 @@
    	</navigation-rule>
 
 	<lifecycle>
-		<phase-listener>auth.Auth</phase-listener>
+		<phase-listener>Auth</phase-listener>
 	</lifecycle>
 
 </faces-config>

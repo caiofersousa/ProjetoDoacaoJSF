@@ -11,6 +11,11 @@
 <h:body>
 	<h:form>
 		<table>
+		<tr>
+			<td colspan="2">
+					Cadastro de Tutores
+			</td>
+		</tr>
 			<tr>
 				<td>
 					<h:outputText for="nome" value="Nome: "/>
@@ -21,7 +26,12 @@
 			</tr>
 			<tr>
 				<td>
-					<h:outputText for="telefone" value="Telefone: "></h:outputText>
+					<h:outputText for="telefone" value="Telefone: ">
+<!-- 						<f:validator validatorId="telefoneValidador"></f:validator> -->
+					</h:outputText>
+					<h:message for="telefone" errorClass="errorMessege"
+					                          infoClass="infoMessege"
+					                          warnClass="warnMessege"></h:message>
 				</td>
 				<td>
 					<p:inputText id="telefone" value="#{tutorBean.tutor.telefone}"/>
@@ -32,7 +42,14 @@
 					<h:outputText for="email" value="Email: "></h:outputText>				
 				</td>
 				<td>
-					<p:inputText id="email" value="#{tutorBean.tutor.email}"/>
+					<p:inputText id="email" value="#{tutorBean.tutor.email}">
+						<f:validator validatorId="emailValidador"></f:validator>
+					</p:inputText>
+					<p:message for="email" 
+					           errorClass="errorMessage" 
+					           infoClass="infoMessage" 
+					           warnClass="warnMessage">
+					</p:message>
 				</td>
 			</tr>
 		    <tr>
@@ -63,7 +80,7 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-		<h:dataTable value="#{animalBean.animais}" var="animal"
+		<h:dataTable value="#{animalBean.animal}" var="animal"
     							 styleClass="order-table"
     							 headerClass="order-table-header"
     				             rowClasses="order-table-odd-row, order-table-even-row">

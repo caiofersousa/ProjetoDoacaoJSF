@@ -22,6 +22,11 @@ public class AnimalBean implements Bean<Animal>{
 	public AnimalBean() {
 	}
 	
+//	
+//	public Especie[] getEspecies(){
+//		
+//	}
+	
 	public Animal getAnimal() {
 		return animal;
 	}
