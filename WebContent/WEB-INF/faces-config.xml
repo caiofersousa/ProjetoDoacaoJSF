@@ -17,4 +17,4 @@
 		<phase-listener>Auth</phase-listener>
 	</lifecycle>
 
-</faces-config>
+</faces-config>	
