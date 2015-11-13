@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Esqueci minha senha</title>
+</h:head>
+   <h:body>
+		<h:form>  
+		    <p:growl id="messages"/>
+				<table>
+				  	<tr>
+						<td>
+						   <h:outputText for="usuario" value="Usuário:(email) "/>
+						</td>
+						<td>
+						   <p:inputText id="usuario" value=""/>
+						</td>
+					</tr>
+					<tr>
+						 <td>
+						    <h:outputText for="confirmacaoUsuario" value="Confirmação usuário: "/>
+						 </td>
+						 <td>
+						    <p:inputText id="confirmacaoUsuario" value=""/>
+						 </td>
+				     </tr>
+					 <tr>
+					    <td>
+				     	   <h:outputText for="senha" value="Senha: "/>
+						 </td>
+						 <td>
+						    <p:password id="senha" value=""/>
+						 </td>
+					  </tr>
+					  <tr>
+						 <td>
+				     	    <h:outputText for="senha" value="Confirmação de senha: "/>
+						 </td>
+						 <td>
+						    <p:password id="confirmacaoSenha" value=""/>
+						 </td>
+					   </tr>
+					   <tr>
+						  <td>
+						     <p:commandButton value="Confirmar" action="alert('Você clicou em mim')"/>
+						  </td>
+						  <td>
+						  	<p:commandButton value="Limpar" action="alert('Você clicou em mim')"/>
+						  </td>
+					    </tr>
+				</table>
+		</h:form>
+    </h:body>
+</html>

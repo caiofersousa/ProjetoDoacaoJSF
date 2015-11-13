@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Login</title>
+	<script type="text/javascript">
+		function emailEnviado(){
+			alert("Uma mensagem foi enviada para seu email."+
+					"Após abri-la clique no link para redefinir sua senha.");
+		}
+	</script>
+</h:head>
+   <h:body>
+		<h:form>
+		    <p:growl id="msgs" showDetail="true" />
+		       <p:panel id="login" header="Login" footer="Login" style="margin-bottom:20px">		
+				  <table>
+				  	<tr>
+				  		<td>
+				  		   <h:outputText for="usuario" value="Usuário: "/>
+				  		</td>
+				  		<td>
+				  		   <p:inputText id="usuario" value="#{loginBean.usuario.nome}"/>
+				  		</td>
+				  	</tr>
+				    <tr>
+				    	<td>
+		     	  		   <h:outputText for="senha" value="Senha: "/>
+				    	</td>
+				    	<td>
+				    	   <p:password id="senha" value="#{loginBean.usuario.senha}"/>
+				    	</td>
+				    </tr>
+				    <tr>
+				    	<td>
+				    		<p:commandButton value="Entrar" action="#{loginBean.logar}"/>
+				    	</td>
+				    	<td>
+				    		<p:commandButton value="Esqueci minha Senha" action="emailEnviado"/>
+				    	</td>
+				    </tr>
+				  </table>
+			</p:panel>
+		</h:form>
+    </h:body>
+</html>

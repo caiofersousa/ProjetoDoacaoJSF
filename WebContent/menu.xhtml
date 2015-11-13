@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Tutor</title>
+</h:head>
+   <h:body>
+		<h:form>  
+		    <p:growl id="messages"/>
+		    <p:menubar>
+		        <p:submenu label="Cadastros" icon="ui-icon-pencil">
+		            <p:menuitem icon="ui-icon-pencil" value="Animais" url="animal.xhtml"/>
+		            <p:menuitem value="Doadores" url="tutor.xhtml" icon="ui-icon-pencil"/>
+		            <p:separator />
+		        </p:submenu>
+		 
+		        <p:submenu label="Procurar" icon="ui-icon-search">
+		            <p:menuitem value="Animais" url="animal.xhtml" icon="ui-icon-search" />
+		            <p:menuitem value="Doadores" url="#" icon="ui-icon-search" />
+		        </p:submenu>
+		 
+		 
+		        <p:submenu label="Sobre" >
+		            <p:menuitem value="Site" url="sobre.xhtml"/>
+		            <p:menuitem value="Desenvolvedores" url="sobre.xhtml"/>
+		            
+		        </p:submenu>
+		 
+		        <p:menuitem value="Sair" url="login.xhtml" icon="ui-icon-close" />
+		 
+		        <f:facet name="options">
+		            <p:inputText style="margin-right:10px" placeholder="Buscar"/>
+		            <p:commandButton type="button" value="PT" action="#{msg.setPtBR}"/>
+		            <p:commandButton type="button" value="EN" action="#{msg.setEnUS}" />
+		        </f:facet>
+		    </p:menubar>
+		</h:form>
+    </h:body>
+</html>
